@@ -20,7 +20,7 @@ async function getData(): Promise<SiteConfig> {
       heroSubtitle: "",
       heroImage: "",
       address: "Unknown",
-      coords: ""
+      mapUrl: ""
     };
   }
 }
