@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SK Properties - Find Your Home</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--color-primary)",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --color-primary: #137fec;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white dark:bg-[#1a2632] border-b border-[#f0f2f4] dark:border-[#2a3642]">
+        <div class="px-4 md:px-10 py-3 flex items-center justify-between max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-4">
+                <div class="size-8 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-3xl" id="nav-icon">apartment</span>
+                </div>
+                <h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                    id="nav-brand-name">SK
+                    Properties</h2>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end items-center gap-8">
+                <nav class="flex items-center gap-6">
+                    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                        href="#">Buy</a>
+                    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                        href="#">Rent</a>
+                    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                        href="#">Commercial</a>
+                    <a class="text-[#111418] dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                        href="#">Blog</a>
+                </nav>
+                <button
+                    class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-bold transition-colors">
+                    <span class="truncate">List Your Property</span>
+                </button>
+            </div>
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-[#111418] dark:text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] flex items-center justify-center bg-cover bg-center"
+        data-alt="Modern Delhi cityscape with apartment buildings and clear sky"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNcOLPxLpr7zu7FXGp1cCAgH90ZdI_aIwTD6TU1zrwusnQuoccganNA4Elkqd8JyNQG0mxQR551glO8Lsla7cSvkQKIG3D4BYUaZ5LRgWH5-oUpSyq1GyZIIKbGagM4F5DpFKuPDeGbhiXll06S5mp4gNQEY4B6gmozmrfYs3F3Qm56-PlQbxDcrIMgUE7rRUgncPsGVGkBEJ8IuF7_rUBq1o3Z8GIf91V-0hcTmve_J-Ki-GTO7qhOTArN0fE1OUU3q6a9qSFLmg');">
+        <div class="container mx-auto px-4 py-12 flex flex-col items-center gap-8 z-10 w-full max-w-4xl">
+            <!-- Hero Text -->
+            <div class="text-center space-y-4">
+                <h1 id="hero-title"
+                    class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-md">
+                    Find Your Perfect Home in <br class="hidden md:block" /> the Heart of Delhi
+                </h1>
+                <p id="hero-subtitle"
+                    class="text-gray-100 text-base md:text-lg font-medium drop-shadow-sm max-w-2xl mx-auto">
+                    Trusted by 10,000+ students, families, and professionals across the capital.
+                </p>
+            </div>
+            <!-- Search Component Box -->
+            <div class="w-full bg-white dark:bg-[#1a2632] rounded-xl shadow-2xl overflow-hidden p-2 md:p-6 mt-4">
+                <!-- Tabs -->
+                <div class="flex border-b border-[#f0f2f4] dark:border-[#2a3642] mb-4 gap-6 px-2 overflow-x-auto">
+                    <button class="flex items-center gap-2 border-b-[3px] border-primary pb-3 px-1 text-primary">
+                        <span class="material-symbols-outlined text-[20px]">key</span>
+                        <span class="text-sm font-bold">Rent</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 border-b-[3px] border-transparent pb-3 px-1 text-gray-500 dark:text-gray-400 hover:text-[#111418] dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">real_estate_agent</span>
+                        <span class="text-sm font-bold">Buy</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 border-b-[3px] border-transparent pb-3 px-1 text-gray-500 dark:text-gray-400 hover:text-[#111418] dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">storefront</span>
+                        <span class="text-sm font-bold">Commercial</span>
+                    </button>
+                </div>
+                <!-- Search Input & Button -->
+                <div class="flex flex-col md:flex-row gap-3">
+                    <div class="flex-1 relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-gray-400">search</span>
+                        </div>
+                        <input
+                            class="block w-full pl-10 pr-3 py-3 border-none rounded-lg bg-[#f6f7f8] dark:bg-[#2a3642] text-[#111418] dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-primary"
+                            placeholder="Search Location (e.g. Mukherjee Nagar, Dwarka)" type="text" />
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <span>Search</span>
+                    </button>
+                </div>
+                <!-- Chips / Filters -->
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button
+                        class="flex items-center gap-1 bg-[#f0f2f4] dark:bg-[#2a3642] px-3 py-1.5 rounded-full text-xs font-medium text-[#111418] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <span>Budget</span>
+                        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-1 bg-[#f0f2f4] dark:bg-[#2a3642] px-3 py-1.5 rounded-full text-xs font-medium text-[#111418] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <span>BHK Type</span>
+                        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-1 bg-[#f0f2f4] dark:bg-[#2a3642] px-3 py-1.5 rounded-full text-xs font-medium text-[#111418] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <span>Furnishing</span>
+                        <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-1 bg-[#f0f2f4] dark:bg-[#2a3642] px-3 py-1.5 rounded-full text-xs font-medium text-[#111418] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <span class="material-symbols-outlined text-[16px] text-green-600">train</span>
+                        <span>Near Metro</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content Container -->
+    <main class="max-w-[1200px] mx-auto px-4 md:px-6 py-12 space-y-20">
+        <!-- Personas / Categories -->
+        <section>
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#111418] dark:text-white mb-2">Browse by Lifestyle</h2>
+                <p class="text-gray-500 dark:text-gray-400">Curated options tailored to your specific needs</p>
+            </div>
+            <div
+                class="flex overflow-x-auto pb-4 gap-4 sm:gap-6 lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0 snap-x snap-mandatory no-scrollbar">
+                <!-- Card 1 -->
+                <div
+                    class="min-w-[85vw] sm:min-w-[45vw] lg:min-w-0 flex-shrink-0 snap-center group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="University students studying together"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMSDPrQIdBtsKjSr3j0DO82xwuvgCmUFzIdibcChtyBha9ujCBbHq2AjiH9Zin9vqn2bYOL-rDF6idWik2-It_PxWFvs5WfBIEkx1g1_4A-Rr9WeyYeP_npmDxcZnu97LV9p1j413s6rkE_acbNuKLRMgouI-PvmK1tLqFseQJwAy1RS52qegkEVLfWvGurj68i5FvaLkVYAlyKsBpu3uYl4LO-fFR5b10vdPEXwx_07OpkUIyytAUJMKW-0q41eME25Bzj0I7pwc" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+                        <span class="material-symbols-outlined text-white mb-2 text-3xl">school</span>
+                        <h3 class="text-white text-xl font-bold">Students</h3>
+                        <p class="text-gray-200 text-sm mt-1 mb-3">Near campus &amp; coaching hubs</p>
+                        <span
+                            class="text-primary font-bold text-sm flex items-center gap-1 group-hover:underline">Explore
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Young professionals collaborating in a modern office"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIltcf5aLLxzY8iNS4OxdGZ4MdXMH8Y6RWRKBriqFhsToEFhteIOoEpLis1hVjdgnIQL94J97oqpZd-Y-QU3FTlmLny6goQUyJE1jYijGDsT9kIxUrcuYNd3pNwNv5Rqrl1JNPaFGB2qYXPfBWXf0s0YMvchxAaIFg_JgYpRUH3-kWoBIApwPgHnXiXiQNKGuDDtOat5XZgsUyZvzw0TI7PVH4orX23Kihs2he-jmWSBpPBOLSW9cj2pbT-fYx-HpIXqTmly90o0Y" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+                        <span class="material-symbols-outlined text-white mb-2 text-3xl">work</span>
+                        <h3 class="text-white text-xl font-bold">Professionals</h3>
+                        <p class="text-gray-200 text-sm mt-1 mb-3">Studios &amp; shared flats</p>
+                        <span
+                            class="text-primary font-bold text-sm flex items-center gap-1 group-hover:underline">Explore
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Family relaxing in a living room"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmAYZIGXZp95TbLsSVk_L2o8mGhYrXtAV5ZNJqC7jOKKLXYETgcC4AlMM3XjJN0qAZBE7qbbDZoV6ULRBZyJOLtARMiTW1K8wR8gdIxNvirg3HhXDJSV25lRWNosY9c0Xt2m7QQWe41jEDEVar9I5p8ApIbCgamkJNmfCUfrLN_Y6UDzqcFcosDTca9kzK63Dc7n3gR397aBYbgMOYWdn4V2NVXE9ymaiWWh4m_zYzomxg74bu5sY6Bq5P_JeMOKJVB3CanRfs5g" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+                        <span class="material-symbols-outlined text-white mb-2 text-3xl">family_restroom</span>
+                        <h3 class="text-white text-xl font-bold">Families</h3>
+                        <p class="text-gray-200 text-sm mt-1 mb-3">Spacious homes &amp; parks</p>
+                        <span
+                            class="text-primary font-bold text-sm flex items-center gap-1 group-hover:underline">Explore
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="group cursor-pointer relative overflow-hidden rounded-xl h-64 md:h-80">
+                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Modern office building glass facade"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBety62JLzVEmoaS8-0OjoJVtpURI93V2BR3CGhqGFpvepuiAf_BlKnL_k0V2109kuyLxjhrL8k84-N7ak1vZEMUdPv0i2ZXuXx2YLZyvvfrLPFIlXPk-re65SxC87_5dAg2c656CL1JMMLy60iTuzmaPgJ6MX942V5TLtgF90Fym1qf3gtnlt_kMFFw-Q8C0hsqkyb0-QQAG5QHL9YgpKIM-iUS5-LmsUuzGpsZ_xldPnhMrJDZEOLZpDKrSclhW14PFkkMYLJU_Q" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+                        <span class="material-symbols-outlined text-white mb-2 text-3xl">store</span>
+                        <h3 class="text-white text-xl font-bold">Commercial</h3>
+                        <p class="text-gray-200 text-sm mt-1 mb-3">Offices &amp; retail spaces</p>
+                        <span
+                            class="text-primary font-bold text-sm flex items-center gap-1 group-hover:underline">Explore
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Listings -->
+        <section>
+            <div class="flex flex-col md:flex-row justify-between items-end md:items-center mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#111418] dark:text-white">Featured Properties</h2>
+                    <p class="text-gray-500 dark:text-gray-400 mt-1">Handpicked listings across Delhi's top locations
+                    </p>
+                </div>
+                <button class="text-primary font-bold flex items-center gap-1 hover:underline">
+                    View All Listings <span class="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+            </div>
+            <div
+                class="flex overflow-x-auto pb-4 gap-4 md:gap-8 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 snap-x snap-mandatory no-scrollbar">
+                <!-- Listing Card 1 -->
+                <div
+                    class="min-w-[85vw] sm:min-w-[45vw] lg:min-w-0 flex-shrink-0 snap-center bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-[#f0f2f4] dark:border-[#2a3642] group hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Modern apartment interior with balcony"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCph0liwVGfDLJWY-OOs3aj5HF-eHE__uavt18ajs5ex6LIM1bSs02Ni5fp_xZzpffw7c1U03mBBx9FwU2hgX2Jw58EketgXITTg0EAhItXzg4RsEK0X-5mRytpLRHY9qZ8pXH_-nHvKs8uJttY3RjNvg4kqWJAeYa9UL5vovVKFEzWrmAvktfrarUWNiJRLkAiZae77RY49lmK7nbYj2C1ayLLQmy7KVPFkL5JA6JY11mMzFJIo4brW_fLfTjKGomkrbQF9wySj_g" />
+                        <div class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            VERIFIED</div>
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 p-1.5 rounded-full cursor-pointer hover:text-red-500 text-gray-600 dark:text-gray-300">
+                            <span class="material-symbols-outlined text-[20px] block">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white">3 BHK Luxury Floor</h3>
+                                <p class="text-gray-500 text-sm">Greater Kailash I, South Delhi</p>
+                            </div>
+                            <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">RENT</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 my-4 border-t border-b border-gray-100 dark:border-gray-700 py-3">
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bed</span> 3 Beds
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bathtub</span> 3 Baths
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">square_foot</span> 1800 sqft
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xl font-bold text-[#111418] dark:text-white">₹65,000<span
+                                    class="text-sm font-normal text-gray-500">/mo</span></p>
+                            <button
+                                class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors">Book
+                                Visit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Listing Card 2 -->
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-[#f0f2f4] dark:border-[#2a3642] group hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Spacious kitchen in a modern flat"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6iBjqf0rl6EX5aIwMTBtN10wc3nE13ZMPk1ld6tFVv5G6RrwRAB0p1Vin1Av7EYpLQK_hYZxvvDX3AUv9LCNYJnLjRDs_A-O_gInGcfjUM_Emi6ifCFg6qcH1c7A36j2ryqMybo-8U2E3sJMCjtnkWNdzRq6Zg4hQ8MxIWiE--UelhCzim8_N_pHnjzVaavEzAeruCYXNf_XHw5CvwslPTWs2ikPb-w-kGSm1uqlevvewG_3LYQNcqF2qvBC30SsijV55frQ2HRs" />
+                        <div class="absolute top-3 left-3 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            NEW</div>
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 p-1.5 rounded-full cursor-pointer hover:text-red-500 text-gray-600 dark:text-gray-300">
+                            <span class="material-symbols-outlined text-[20px] block">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white">Student Studio</h3>
+                                <p class="text-gray-500 text-sm">Vijay Nagar, North Campus</p>
+                            </div>
+                            <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">RENT</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 my-4 border-t border-b border-gray-100 dark:border-gray-700 py-3">
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bed</span> 1 Bed
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bathtub</span> 1 Bath
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">wifi</span> Free WiFi
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xl font-bold text-[#111418] dark:text-white">₹15,000<span
+                                    class="text-sm font-normal text-gray-500">/mo</span></p>
+                            <button
+                                class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors">Book
+                                Visit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Listing Card 3 -->
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-[#f0f2f4] dark:border-[#2a3642] group hover:shadow-lg transition-all">
+                    <div class="relative h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Exterior view of a modern apartment building"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzuGT0o2erBt8WP8Mq318k4xC-H135sxufyHquAGt--RRZ7AvXuI5elUe22I-rVXUlLLzzLB5O5p_RzJyoVJr1svlHvimROt3q5DJ8eq2_WGt3iQEmrkA1KiyJXyS3ptcPmcBptYNPEwon5TxPpmoijmpl0LhGxSDmsiqn4hKhcyRempZkudQhIP-bDAWDrmvpm5apUrakPmTh43wIsQ-qFohR6P59fh11t7U7RNiXPk6cCUmFwhj2RJCpJxX2eBPPlpeDO_3YzYU" />
+                        <div class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">
+                            FOR SALE</div>
+                        <div
+                            class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 p-1.5 rounded-full cursor-pointer hover:text-red-500 text-gray-600 dark:text-gray-300">
+                            <span class="material-symbols-outlined text-[20px] block">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-[#111418] dark:text-white">2 BHK Appt</h3>
+                                <p class="text-gray-500 text-sm">Dwarka Mor, West Delhi</p>
+                            </div>
+                            <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">BUY</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 my-4 border-t border-b border-gray-100 dark:border-gray-700 py-3">
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bed</span> 2 Beds
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">bathtub</span> 2 Baths
+                            </div>
+                            <div class="flex items-center gap-1 text-gray-600 dark:text-gray-400 text-sm">
+                                <span class="material-symbols-outlined text-[18px]">deck</span> Balcony
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-xl font-bold text-[#111418] dark:text-white">₹45 Lakh</p>
+                            <button
+                                class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors">Enquire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section class="bg-[#eaf4fe] dark:bg-[#16202a] rounded-2xl p-8 md:p-12">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#111418] dark:text-white mb-3">Why SK Properties?</h2>
+                <p class="text-gray-600 dark:text-gray-300">We make finding a home in the chaotic capital simple,
+                    transparent, and brokerage-free for students.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-[#1a2632] flex items-center justify-center text-primary shadow-sm mb-4">
+                        <span class="material-symbols-outlined text-3xl">verified_user</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">100% Verified Listings</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Every property is physically
+                        visited by our agents before listing.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-[#1a2632] flex items-center justify-center text-primary shadow-sm mb-4">
+                        <span class="material-symbols-outlined text-3xl">money_off</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Zero Brokerage Options</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Exclusive deals for students and
+                        first-time professionals.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-white dark:bg-[#1a2632] flex items-center justify-center text-primary shadow-sm mb-4">
+                        <span class="material-symbols-outlined text-3xl">support_agent</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Local Support</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Our offices in North, South, and
+                        West Delhi are always open for you.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Locations / Map -->
+        <section
+            class="flex flex-col md:flex-row gap-8 bg-white dark:bg-[#1a2632] rounded-2xl border border-[#f0f2f4] dark:border-[#2a3642] overflow-hidden">
+            <div class="flex-1 p-8 md:p-12 flex flex-col justify-center">
+                <div class="mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#111418] dark:text-white mb-4">We cover the entire
+                        Capital</h2>
+                    <p class="text-gray-500 dark:text-gray-400 mb-6">From the student hubs of North Campus to the
+                        corporate towers of Gurgaon, our network is vast.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-[#111418] dark:text-white">North Delhi</h4>
+                                <p class="text-xs text-gray-500">Mukherjee Nagar, GTB Nagar, Civil Lines</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-[#111418] dark:text-white">South Delhi</h4>
+                                <p class="text-xs text-gray-500">Saket, Hauz Khas, Lajpat Nagar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-[#111418] dark:text-white">West Delhi</h4>
+                                <p class="text-xs text-gray-500">Dwarka, Janakpuri, Rajouri Garden</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <h4 class="font-bold text-[#111418] dark:text-white">NCR</h4>
+                                <p class="text-xs text-gray-500">Noida, Gurgaon, Faridabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="window.open(`https://maps.google.com/?q=${config.coords}`, '_blank')"
+                    class="w-fit px-6 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                    Find Nearest Office
+                </button>
+            </div>
+            <div class="flex-1 min-h-[300px] bg-gray-200 relative">
+                <img class="absolute inset-0 w-full h-full object-cover"
+                    data-alt="Map of Delhi with various location pins highlighting office areas" data-location="Delhi"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsHpTnk78HJuoqqrwfsWUhYQTGUcoaQBZdcw4EWDW8U_yuDIkClWNddD901xrBIuO0w9AVdbRkvT_HMRea5D0uDovVQ1xYOP4GBVejurdbthduuCXEwGber_yFbSL0WRKlMwv_6cDP-0GS87SWsVIUSUtEarWfhf1IN3FYIX91MJmm-jfJ_gPK8qFPDkYMsQIRi517bpxkKj_JvA5IcP5sJd1sqt7phggr784EAjLVeNSIn49y65c0Yb9rJfVieW7HXNaZ46cKaAM" />
+                <div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+                    <div class="bg-white text-black px-4 py-2 rounded-lg shadow-lg font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-red-500">place</span> 15+ Offices
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-[#1a2632] border-t border-[#f0f2f4] dark:border-[#2a3642] pt-16 pb-8">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="size-8 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-3xl">apartment</span>
+                        </div>
+                        <h2 class="text-xl font-bold">SK Properties</h2>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">
+                        Simplifying real estate in India's capital. Whether you are a student, a family, or a business,
+                        we have the space for you.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="text-gray-400 hover:text-primary" href="#"><span
+                                class="material-symbols-outlined">thumb_up</span></a>
+                        <a class="text-gray-400 hover:text-primary" href="#"><span
+                                class="material-symbols-outlined">chat_bubble</span></a>
+                        <a class="text-gray-400 hover:text-primary" href="#"><span
+                                class="material-symbols-outlined">mail</span></a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 flex-1">
+                    <div>
+                        <h4 class="font-bold mb-4 text-[#111418] dark:text-white">Properties</h4>
+                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                            <li><a class="hover:text-primary" href="#">Buy House</a></li>
+                            <li><a class="hover:text-primary" href="#">Rent Flat</a></li>
+                            <li><a class="hover:text-primary" href="#">PG / Hostels</a></li>
+                            <li><a class="hover:text-primary" href="#">Commercial</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-[#111418] dark:text-white">Company</h4>
+                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                            <li><a class="hover:text-primary" href="#">About Us</a></li>
+                            <li><a class="hover:text-primary" href="#">Careers</a></li>
+                            <li><a class="hover:text-primary" href="#">Blog</a></li>
+                            <li><a class="hover:text-primary" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4 text-[#111418] dark:text-white">Support</h4>
+                        <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                            <li><a class="hover:text-primary" href="#">Help Center</a></li>
+                            <li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+                            <li><a class="hover:text-primary" href="#">Legal</a></li>
+                            <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex flex-col md:flex-row justify-between items-center border-t border-[#f0f2f4] dark:border-[#2a3642] pt-8 gap-4">
+                <p class="text-sm text-gray-500 dark:text-gray-400">© 2023 SK Properties Agency. All rights reserved.
+                </p>
+                <div class="text-xs text-gray-400 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">verified</span>
+                    <span>RERA Registered: DEL-2023-9988</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Configuration / Admin Panel (For Demo Purposes) -->
+    <div id="demo-controls" class="fixed bottom-4 right-4 z-[100]">
+        <button onclick="toggleAdminPanel()"
+            class="bg-black/80 text-white p-3 rounded-full shadow-lg hover:bg-black transition-all">
+            <span class="material-symbols-outlined">tune</span>
+        </button>
+    </div>
+
+    <div id="admin-panel"
+        class="fixed inset-y-0 right-0 w-80 bg-white dark:bg-[#1a2632] shadow-2xl transform translate-x-full transition-transform duration-300 z-[101] overflow-y-auto border-l border-gray-200 dark:border-gray-700">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold dark:text-white">Site Config</h3>
+                <button onclick="toggleAdminPanel()"
+                    class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Brand Info -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Brand Name</label>
+                    <input type="text" id="input-brand" oninput="updateConfig('brand', this.value)"
+                        class="w-full bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 text-sm dark:text-white border-none focus:ring-2 focus:ring-primary">
+                </div>
+
+                <!-- Icon -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Icon (Material Symbol)</label>
+                    <input type="text" id="input-icon" oninput="updateConfig('icon', this.value)"
+                        class="w-full bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 text-sm dark:text-white border-none focus:ring-2 focus:ring-primary"
+                        placeholder="e.g. apartment, home, castle">
+                </div>
+
+                <!-- Theme Color -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Theme Color</label>
+                    <div class="grid grid-cols-5 gap-2">
+                        <button onclick="setThemeColor('#137fec')"
+                            class="w-8 h-8 rounded-full bg-[#137fec] ring-2 ring-offset-2 ring-transparent focus:ring-gray-400"></button>
+                        <button onclick="setThemeColor('#ec1313')"
+                            class="w-8 h-8 rounded-full bg-[#ec1313] ring-2 ring-offset-2 ring-transparent focus:ring-gray-400"></button>
+                        <button onclick="setThemeColor('#13ec7f')"
+                            class="w-8 h-8 rounded-full bg-[#13ec7f] ring-2 ring-offset-2 ring-transparent focus:ring-gray-400"></button>
+                        <button onclick="setThemeColor('#8b13ec')"
+                            class="w-8 h-8 rounded-full bg-[#8b13ec] ring-2 ring-offset-2 ring-transparent focus:ring-gray-400"></button>
+                        <button onclick="setThemeColor('#ec8b13')"
+                            class="w-8 h-8 rounded-full bg-[#ec8b13] ring-2 ring-offset-2 ring-transparent focus:ring-gray-400"></button>
+                    </div>
+                    <input type="color" onchange="setThemeColor(this.value)" class="w-full h-10 cursor-pointer">
+                </div>
+
+                <!-- Hero Section -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Hero Title</label>
+                    <textarea id="input-hero-title" oninput="updateConfig('heroTitle', this.value)" rows="3"
+                        class="w-full bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 text-sm dark:text-white border-none focus:ring-2 focus:ring-primary"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Hero Subtitle</label>
+                    <textarea id="input-hero-subtitle" oninput="updateConfig('heroSubtitle', this.value)" rows="2"
+                        class="w-full bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 text-sm dark:text-white border-none focus:ring-2 focus:ring-primary"></textarea>
+                </div>
+
+                <!-- Location -->
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-500 uppercase">Office Coordinates</label>
+                    <input type="text" id="input-coords" oninput="updateConfig('coords', this.value)"
+                        class="w-full bg-gray-100 dark:bg-gray-800 rounded px-3 py-2 text-sm dark:text-white border-none focus:ring-2 focus:ring-primary"
+                        placeholder="28.6139,77.2090">
+                    <p class="text-xs text-gray-400">Updates 'Find Nearest Office' button link.</p>
+                </div>
+
+                <div class="pt-6 border-t dark:border-gray-700">
+                    <button onclick="resetConfig()"
+                        class="w-full py-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded text-sm font-bold transition-colors">
+                        Reset to Defaults
+                    </button>
+                    <p class="text-[10px] text-gray-400 text-center mt-2">Changes are saved to your device
+                        automatically.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Default Config
+        const defaults = {
+            brand: "SK Properties",
+            icon: "apartment",
+            color: "#137fec",
+            heroTitle: "Find Your Perfect Home in <br class=\"hidden md:block\" /> the Heart of Delhi",
+            heroSubtitle: "Trusted by 10,000+ students, families, and professionals across the capital.",
+            coords: "28.6948, 77.1542" // Netaji Subhash Place
+        };
+
+        // Current Config
+        let config = JSON.parse(localStorage.getItem('siteConfig')) || { ...defaults };
+
+        // DOM Elements
+        const els = {
+            brand: document.getElementById('nav-brand-name'),
+            icon: document.getElementById('nav-icon'),
+            heroTitle: document.getElementById('hero-title'),
+            heroSubtitle: document.getElementById('hero-subtitle'),
+            inputs: {
+                brand: document.getElementById('input-brand'),
+                icon: document.getElementById('input-icon'),
+                heroTitle: document.getElementById('input-hero-title'),
+                heroSubtitle: document.getElementById('input-hero-subtitle'),
+                coords: document.getElementById('input-coords')
+            }
+        };
+
+        function init() {
+            // Apply all settings
+            updateDOM();
+
+            // Populate inputs
+            els.inputs.brand.value = config.brand;
+            els.inputs.icon.value = config.icon;
+            els.inputs.heroTitle.value = config.heroTitle;
+            els.inputs.heroSubtitle.value = config.heroSubtitle;
+            els.inputs.coords.value = config.coords;
+
+            // Apply color
+            document.documentElement.style.setProperty('--color-primary', config.color);
+        }
+
+        function updateConfig(key, value) {
+            config[key] = value;
+            localStorage.setItem('siteConfig', JSON.stringify(config));
+            updateDOM();
+        }
+
+        function setThemeColor(color) {
+            config.color = color;
+            document.documentElement.style.setProperty('--color-primary', color);
+            localStorage.setItem('siteConfig', JSON.stringify(config));
+        }
+
+        function updateDOM() {
+            if (els.brand) els.brand.textContent = config.brand;
+            if (els.icon) els.icon.textContent = config.icon;
+            if (els.heroTitle) els.heroTitle.innerHTML = config.heroTitle;
+            if (els.heroSubtitle) els.heroSubtitle.textContent = config.heroSubtitle;
+        }
+
+        function toggleAdminPanel() {
+            const panel = document.getElementById('admin-panel');
+            panel.classList.toggle('translate-x-full');
+        }
+
+        function resetConfig() {
+            if (confirm('Reset all settings to default?')) {
+                config = { ...defaults };
+                localStorage.setItem('siteConfig', JSON.stringify(config));
+                init();
+            }
+        }
+
+        // Initialize on load
+        init();
+    </script>
+    </footer>
+</body>
+
+</html>
